@@ -48,23 +48,7 @@ variable "database_subnet_names" {
   default = ["timing-database-1a", "timing-database-1b"]
 }
 
-variable "PublicRT_tags" {
-  type = map
-  default = {
-    Name = "public-route-timing"
-    env  = "prod"
-    terraorm = "true"
-  }
-}
 
-variable "PrivateRT_tags" {
-  type = map
-  default = {
-    Name = "private-route-timing"
-    env  = "prod"
-    terraorm = "true"
-  }
-}
 variable "vpc_cidr" {
   default = "10.0.0.0/16"
 }

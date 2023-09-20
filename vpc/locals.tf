@@ -1,7 +1,14 @@
+
+
 locals {
-  tags = {
-    Env = "DEV"
-    Terraform = "True"
-  }
-  
+  PublicRT_tags = format("%s+%s",lookup(var.tags, "Name"), "publicRT")
 }
+# we have used concat two combine twostrings in terraform
+locals {
+  PrivateRT_tags = format("%s+%s",lookup(var.tags, "Name"), "privateRT")
+}
+
+locals {
+  databaseRT_tags = format("%s+%s",lookup(var.tags, "Name"), "databaseRT")
+}
+

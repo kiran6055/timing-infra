@@ -9,8 +9,9 @@ module "vpc" {
   private_subnet_names  = var.private_subnet_names
   database_subnet_names = var.database_subnet_names
   tags                  = var.tags
-  PublicRT_tags         = var.PublicRT_tags
-  PrivateRT_tags        = var.PrivateRT_tags
+  PublicRT_tags         = local.PublicRT_tags
+  PrivateRT_tags        = local.PrivateRT_tags
+  databaseRT_tags       = local.databaseRT_tags
 }
 
 
