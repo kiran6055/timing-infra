@@ -51,7 +51,7 @@ variable "database_subnet_names" {
 variable "PublicRT_tags" {
   type = map
   default = {
-    Name = "public-route"
+    Name = "public-route-timing"
     env  = "prod"
     terraorm = "true"
   }
@@ -60,7 +60,7 @@ variable "PublicRT_tags" {
 variable "PrivateRT_tags" {
   type = map
   default = {
-    Name = "private-route"
+    Name = "private-route-timing"
     env  = "prod"
     terraorm = "true"
   }
