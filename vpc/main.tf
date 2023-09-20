@@ -3,7 +3,7 @@ module "vpc" {
   vpc_cidr = var.vpc_cidr
   public_cidr = var.public_cidr
   private_cidr = var.private_cidr
-  database_cidr = var.databse_cidr
+  database_cidr = var.database_cidr
   tags = merge(var.tags, {
     Name ="timing"})
   publicsubnet_tags = merge(var.tags, {
