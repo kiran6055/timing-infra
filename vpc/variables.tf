@@ -31,10 +31,40 @@ variable "private_subnet_tags" {
 variable "database_subnet_tags" {
   type = map
   default = {
-    Name = "vpc-timing"
+    Name = "database-subnet"
   }
 }
 
+
+variable "private_subnet_names" {
+  default = ["timing-private-1a", "timing-private-1b"]
+}
+
+variable "public_subnet_names" {
+  default = ["timing-public-1a", "timing-public-1b"]
+}
+
+variable "database_subnet_names" {
+  default = ["timing-database-1a", "timing-database-1b"]
+}
+
+variable "PublicRT_tags" {
+  type = map
+  default = {
+    Name = "public-route"
+    env  = "prod"
+    terraorm = "true"
+  }
+}
+
+variable "PrivateRT_tags" {
+  type = map
+  default = {
+    Name = "private-route"
+    env  = "prod"
+    terraorm = "true"
+  }
+}
 variable "vpc_cidr" {
   default = "10.0.0.0/16"
 }
@@ -56,6 +86,3 @@ variable "azs" {
   default = ["ap-south-1a", "ap-south-1b"]
 }
 
-variable "public_subnet_names" {
-  default = ["timing-infra-1a", "timing-infra-1b"]
-}
