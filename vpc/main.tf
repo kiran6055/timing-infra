@@ -1,17 +1,12 @@
 module "vpc" {
   source = "../../terraform-modules/vpc"
   vpc_cidr = var.vpc_cidr
-  public_cidr = var.public_cidr
-  private_cidr = var.private_cidr
-  database_cidr = var.database_cidr
-  tags = merge(var.tags, {
-    Name ="timing"})
-  publicsubnet_tags = merge(var.tags, {
-    Name ="public-timing"})
-  privatesubnet_tags = merge(var.tags, {
-    Name ="private-timing"})
-  databasesubnet_tags = merge(var.tags, {
-    Name ="database-timing"})
+  public_subnet_cidr = var.public_subnet_cidr
+  private_subnet_cidr = var.private_subnet_cidr
+  database_subnet_cidr = var.database_subnet_cidr
+  azs = var.azs
+  public_subnet_names = var.public_subnet_names
+  tags = var.tags
 }
 
 
