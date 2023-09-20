@@ -13,7 +13,7 @@ variable "cidr" {
   }
 }
 
-variable "cidr" {
+variable "vpc_cidr" {
   type = map
   default = {
     cidr = "10.0.0.0/16"
