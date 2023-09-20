@@ -1,7 +1,7 @@
 variable "tags" {
   type = map
   default = {
-    Name = "kiran-devops"
+    Name = "infra"
     env = "prod"
   }
 }
