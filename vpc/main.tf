@@ -7,12 +7,13 @@ module "vpc" {
   tags = merge(var.tags, {
     Name ="timing"})
   publicsubnet_tags = merge(var.tags, {
-    Name ="timing"})
+    Name ="public-timing"})
   privatesubnet_tags = merge(var.tags, {
-    Name ="timing"})
+    Name ="private-timing"})
   databasesubnet_tags = merge(var.tags, {
-    Name ="timing"})
+    Name ="database-timing"})
 }
+
 
 
 # resource "aws_security_group" "web" {
