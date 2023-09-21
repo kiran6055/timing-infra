@@ -69,11 +69,10 @@ variable "database_subnet_cidr" {
   default = ["10.0.6.0/24", "10.0.7.0/24"]
 }
 
-variable "security_group_name" {
+variable "rds_security_group_name" {
   default = "timing"
 }
 
-variable "security_group_description" {
+variable "rds_security_group_description" {
   default = "This security group is to attach timing RDS"
 }
-
