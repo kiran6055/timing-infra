@@ -77,6 +77,40 @@ variable "rds_security_group_DES" {
   default = "This security group is to attach timing RDS"
 }
 
-variable "ingress_cidr" {
-  default = []
+# variable "ingress_cidr" {
+#   default = []
+# }
+
+
+variable "allocated_storage" {
+  default = "10"
+  
+}
+
+variable "db_name" {
+  default = "mydb123"
+}
+
+variable "identifier" {
+  default = "timing"
+}
+
+variable "engine" {
+  default = "postgres"
+}
+
+variable "engine_version" {
+  default =  "14.7-R1"
+}
+
+variable "rds_username" {
+  default = "adminKiran"
+}
+
+variable "instance_type" {
+  default = "db.t4g.micro"
+}
+
+variable "secret_name" {
+  default = "timing/rds-password-value-kiran"
 }
