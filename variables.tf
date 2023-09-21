@@ -73,6 +73,10 @@ variable "rds_security_group_name" {
   default = "timing"
 }
 
-variable "rds_security_group_description" {
+variable "rds_security_group_DES" {
   default = "This security group is to attach timing RDS"
+}
+
+variable "ingress_cidr" {
+  default = []
 }
