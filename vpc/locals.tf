@@ -12,3 +12,6 @@ locals {
   databaseRT_tags = format("%s+%s",lookup(var.tags, "Name"), "databaseRT")
 }
 
+locals {
+  vpc_id = module.vpc.vpc_id
+}
