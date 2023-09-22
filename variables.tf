@@ -112,5 +112,20 @@ variable "instance_type" {
 }
 
 variable "secret_name" {
-  default = "timing/rds-password-value-kiran"
+  default = "timing/rds-password-value"
+}
+
+variable "rds_secret_arn" {
+  default = "arn:aws:secretsmanager:ap-south-1:573314280082:secret:rds_password_timing-H59LoM"
+}
+
+variable "ecs_cluster_name" {
+  default = "timing"
+
+}
+
+variable "ecs_log_group_name {
+  type = string
+  default = "/timing/group"
+
 }
