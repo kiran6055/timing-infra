@@ -111,12 +111,12 @@ variable "instance_type" {
   default = "db.t4g.micro"
 }
 
-variable "secret_name" {
-  default = "timing/rds-password-value"
-}
+# variable "secret_name" {
+#   default = "timing/rds-password-value"
+# }
 
-variable "rds_secret_arn" {
-  default = "arn:aws:secretsmanager:ap-south-1:573314280082:secret:rds_password_timing-H59LoM"
+variable "rds_secret_type_arn" {
+  default = "arn:aws:secretsmanager:ap-south-1:573314280082:secret:rds_kiran/timing-I27Kqp"
 }
 
 variable "ecs_cluster_name" {
@@ -124,8 +124,8 @@ variable "ecs_cluster_name" {
 
 }
 
-variable "ecs_log_group_name {
-  type = string
-  default = "/timing/group"
+# variable "ecs_log_group_name {
+#   type = string
+#   default = "/timing/group"
 
-}
+# }
