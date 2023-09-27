@@ -116,7 +116,7 @@ variable "instance_type" {
 # }
 
 variable "rds_secret_type_arn" {
-  default = "arn:aws:secretsmanager:ap-south-1:573314280082:secret:rds_kiran/timing-I27Kqp"
+  default = "arn:aws:secretsmanager:ap-south-1:573314280082:secret:timing/rds/kiran-ARZUnQ"
 }
 
 variable "ecs_cluster_name" {
