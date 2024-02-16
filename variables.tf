@@ -111,21 +111,49 @@ variable "instance_type" {
   default = "db.t4g.micro"
 }
 
-# variable "secret_name" {
-#   default = "timing/rds-password-value"
-# }
+ variable "secret_name" {
+   default = "timing/rds-password-value"
+ }
 
-variable "rds_secret_type_arn" {
-  default = "arn:aws:secretsmanager:ap-south-1:573314280082:secret:timing/rds/kiran-ARZUnQ"
-}
+#variable "rds_secret_type_arn" {
+#  default = "arn:aws:secretsmanager:ap-south-1:573314280082:secret:timing/rds/kiran-ARZUnQ"
+#}
 
 variable "ecs_cluster_name" {
   default = "timing"
 
 }
 
-# variable "ecs_log_group_name {
-#   type = string
-#   default = "/timing/group"
+ variable "ecs_log_group_name" {
+     default = "timing/group"
 
-# }
+}
+
+variable "app_alb_security_group_name" {
+  default = "alb_timing"
+}
+
+variable "app_alb_security_group_DES" {
+  default = "This security group is to attach timing ALB"
+}
+
+variable "ingress_cidr" {
+  default = [
+   {
+    from_port        = 80
+    to_port          = 80
+    cidr_blocks      = "0.0.0.0/0"
+    description      = "opening internet to 80"
+   },
+
+   {
+    from_port        = 443
+    to_port          = 443
+    cidr_blocks      = "0.0.0.0/0"
+    description      = "opening internet to 443"
+   }
+
+
+]
+}
+

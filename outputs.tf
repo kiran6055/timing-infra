@@ -2,10 +2,20 @@ output "vpc_id" {
   value = module.vpc.vpc_id
 }
 
- output "security_group_id" {
-   value = module.rds_sg.security_group_id
+ output "rds_security_group_id" {
+   value = local.rds_security_group_id
  }
 
   output "rds_end_point" {
-   value = module.rds.rds_end_point
+   value = local.rds_end_point
  }
+
+output "app_alb_security_group_id" {
+ value = local.app_alb_security_group_id
+}
+
+output "ecs_cluster_id" {
+ value = local.ecs_cluster_id
+
+}
+
