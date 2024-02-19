@@ -19,3 +19,16 @@ output "ecs_cluster_id" {
 
 }
 
+output "private_subnet_ids" {
+  value = local.private_subnet_ids
+}
+
+output "public_subnet_ids" {
+  value = local.public_subnet_ids
+}
+
+
+output "target_group_arns" {
+  value = local.target_group_arns 
+}
+

@@ -112,12 +112,12 @@ variable "instance_type" {
 }
 
  variable "secret_name" {
-   default = "timing/rds-password-value"
+   default = "timing/rds-password-value3"
  }
 
-#variable "rds_secret_type_arn" {
-#  default = "arn:aws:secretsmanager:ap-south-1:573314280082:secret:timing/rds/kiran-ARZUnQ"
-#}
+variable "rds_secret_arn" {
+  default = "arn:aws:secretsmanager:ap-south-1:358308582535:secret:timing/rds-password-value3-tPQpY7"
+}
 
 variable "ecs_cluster_name" {
   default = "timing"
@@ -156,4 +156,24 @@ variable "ingress_cidr" {
 
 ]
 }
+
+
+variable "app_alb_name" {
+  default = "timing-alb"
+
+}
+
+variable "app_alb_tags" {
+  default = {}
+}
+
+variable "target_group_name" {
+  default = "alb-taget-main"
+}
+
+
+variable "hosted_zone_id" {
+  default = "Z09259501IYATK3I3GQTK"
+}
+
 
