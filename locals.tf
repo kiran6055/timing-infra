@@ -16,9 +16,11 @@ locals {
   private_subnet_ids        	= module.vpc.private_subnet_ids
   public_subnet_ids         	= module.vpc.public_subnet_ids
   target_group_arns             = module.app_alb.target_group_arns
-  app_alb_dns_name              = module.app_alb.lb_dns_name
-  app_alb_zone_id               = module.app_alb_zone_id
+  app_alb_dns_name              = data.aws_ssm_parameter.app_alb_dns_name.value
+  app_alb_zone_id               = data.aws_ssm_parameter.app_alb_zone_id.value
+  app_alb_record_name		= module.route53.app_alb_record_name
 
+# we have give app_alb_dns_name & app_alb_zone_id in terraform-modules-route53 child module those 2 variables are given outputs in application loadbalancer childmodules we will catach them in locals in terraform-modules-route53 or we will give this as parameters in application loadbalancer and will take them in locals as terraform-modules-route53
 
 }
 

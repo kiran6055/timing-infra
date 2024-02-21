@@ -112,11 +112,11 @@ variable "instance_type" {
 }
 
  variable "secret_name" {
-   default = "timing/rds-password-value3"
+   default = "timing/rds-password-value5"
  }
 
 variable "rds_secret_arn" {
-  default = "arn:aws:secretsmanager:ap-south-1:358308582535:secret:timing/rds-password-value3-tPQpY7"
+  default = "arn:aws:secretsmanager:ap-south-1:358308582535:secret:timing/rds-password-value4-VTgS3K"
 }
 
 variable "ecs_cluster_name" {
@@ -171,6 +171,17 @@ variable "target_group_name" {
   default = "alb-taget-main"
 }
 
+
+
+variable "record_name" {
+  description = "Name of the DNS zone"
+  default = "app.aws.ctr.online"
+}
+
+
+variable "app_alb_record_name" {
+  default = "app"
+}
 
 variable "hosted_zone_id" {
   default = "Z09259501IYATK3I3GQTK"

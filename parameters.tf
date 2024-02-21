@@ -71,3 +71,20 @@ resource "aws_ssm_parameter" "rds_secret_arn" {
 
 }
 
+
+
+resource "aws_ssm_parameter" "app_alb_dns_name" {
+  name  = "/timing/vpc/app_alb_dns_name"
+  type  = "String"
+  value = module.app_alb.app_alb_dns_name 
+}
+
+
+resource "aws_ssm_parameter" "app_alb_zone_id" {
+  name  = "/timing/vpc/app_alb_zone_id"
+  type  = "String"
+  value = module.app_alb.app_alb_zone_id
+
+}
+
+

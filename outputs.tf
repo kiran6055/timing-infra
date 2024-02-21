@@ -32,3 +32,7 @@ output "target_group_arns" {
   value = local.target_group_arns 
 }
 
+
+output "app_alb_record_name" {
+  value = local.app_alb_record_name
+}
