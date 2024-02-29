@@ -112,7 +112,7 @@ variable "instance_type" {
 }
 
  variable "secret_name" {
-   default = "timing/rds-password-value5"
+   default = "timing/rds-password-value6"
  }
 
 variable "rds_secret_arn" {
@@ -175,7 +175,7 @@ variable "target_group_name" {
 
 variable "record_name" {
   description = "Name of the DNS zone"
-  default = "app.aws.ctr.online"
+  default = "app.awsctr.online"
 }
 
 
@@ -184,7 +184,14 @@ variable "app_alb_record_name" {
 }
 
 variable "hosted_zone_id" {
-  default = "Z09259501IYATK3I3GQTK"
+  default = "Z10126533LAUSSXMXTTT9"
 }
 
+#variable "aws_instance.test.id" {
+#
+#}
 
+
+#variable "target_group_arns" {
+#
+#}
