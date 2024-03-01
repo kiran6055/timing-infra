@@ -112,7 +112,7 @@ variable "instance_type" {
 }
 
  variable "secret_name" {
-   default = "timing/rds-password-value6"
+   default = "timing/rds-password-value7"
  }
 
 variable "rds_secret_arn" {

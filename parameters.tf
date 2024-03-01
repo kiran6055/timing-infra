@@ -64,6 +64,15 @@ resource "aws_ssm_parameter" "target_group_arn" {
 }
 
 
+resource "aws_ssm_parameter" "app_alb_arn" {
+  name  = "/timing/vpc/app_alb_arn"
+  type  = "StringList"
+  value = local.app_alb_arn
+
+}
+
+
+
 resource "aws_ssm_parameter" "rds_secret_arn" {
   name  = "/timing/vpc/rds_secret_arn"
   type  = "String"
