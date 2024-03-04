@@ -28,16 +28,29 @@ output "public_subnet_ids" {
 }
 
 
-output "target_group_arns" {
-  value = local.target_group_arns 
+output "target_group_arn" {
+  value = local.target_group_arn 
 }
 
 
-output "app_alb_arn" {
+
+output "web_target_group_arn" {
+  value = local.web_target_group_arn
+}
+
+
+
+output "alb_arn" {
   value = local.app_alb_arn
 }
 
-output "app_alb_record_name" {
-  value = local.app_alb_record_name
+output "web_alb_arn" {
+  value = local.web_alb_arn
 }
+
+
+
+#output "app_alb_record_name" {
+#  value = local.app_alb_record_name
+#}
 

@@ -112,11 +112,11 @@ variable "instance_type" {
 }
 
  variable "secret_name" {
-   default = "timing/rds-password-value7"
+   default = "timing/rds-password-value8"
  }
 
 variable "rds_secret_arn" {
-  default = "arn:aws:secretsmanager:ap-south-1:358308582535:secret:timing/rds-password-value4-VTgS3K"
+  default = "arn:aws:secretsmanager:ap-south-1:358308582535:secret:timing/rds-password-value8-kBjZVM"
 }
 
 variable "ecs_cluster_name" {
@@ -136,6 +136,16 @@ variable "app_alb_security_group_name" {
 variable "app_alb_security_group_DES" {
   default = "This security group is to attach timing ALB"
 }
+
+
+variable "web_alb_security_group_name" {
+  default = "web_timing"
+}
+
+variable "web_alb_security_group_DES" {
+  default = "This web security group is to attach timing ALB"
+}
+
 
 variable "ingress_cidr" {
   default = [
@@ -173,6 +183,22 @@ variable "target_group_name" {
 
 
 
+variable "web_alb_name" {
+  default = "timing-web-alb"
+
+}
+
+variable "web_alb_tags" {
+  default = {}
+}
+
+variable "web_target_group_name" {
+  default = "web-lb-taget-main"
+}
+
+
+
+
 variable "record_name" {
   description = "Name of the DNS zone"
   default = "app.awsctr.online"
@@ -183,15 +209,24 @@ variable "app_alb_record_name" {
   default = "app"
 }
 
+
+variable "web_alb_record_name" {
+  default = "web"
+}
+
+
+
+variable "web_record_name" {
+  default = "web.awsctr.online"
+}
+
+
+
 variable "hosted_zone_id" {
   default = "Z10126533LAUSSXMXTTT9"
 }
 
-#variable "aws_instance.test.id" {
-#
+#variable "load_balancer_arn" {
+
 #}
 
-
-#variable "target_group_arns" {
-#
-#}

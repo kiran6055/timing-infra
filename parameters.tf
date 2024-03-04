@@ -57,9 +57,9 @@ resource "aws_ssm_parameter" "ecs_cluster_id" {
 
 
 resource "aws_ssm_parameter" "target_group_arn" {
-  name  = "/timing/vpc/target_group_arns"
+  name  = "/timing/vpc/target_group_arn"
   type  = "StringList"
-  value = local.target_group_arns
+  value = local.target_group_arn
 
 }
 
@@ -85,15 +85,28 @@ resource "aws_ssm_parameter" "rds_secret_arn" {
 resource "aws_ssm_parameter" "app_alb_dns_name" {
   name  = "/timing/vpc/app_alb_dns_name"
   type  = "String"
-  value = module.app_alb.app_alb_dns_name 
+  value = module.alb.app_alb_dns_name 
 }
 
 
 resource "aws_ssm_parameter" "app_alb_zone_id" {
   name  = "/timing/vpc/app_alb_zone_id"
   type  = "String"
-  value = module.app_alb.app_alb_zone_id
+  value = module.alb.app_alb_zone_id
 
 }
 
+#resource "aws_ssm_parameter" "web_alb_dns_name" {
+#  name  = "/timing/vpc/web_alb_dns_name"
+#  type  = "String"
+#  value = module.web_alb.web_alb_dns_name
+#}
+
+
+#resource "aws_ssm_parameter" "web_alb_zone_id" {
+#  name  = "/timing/vpc/web_alb_zone_id"
+#  type  = "String"
+#  value = module.web_alb.web_alb_zone_id
+
+#}
 
