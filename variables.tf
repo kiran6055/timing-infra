@@ -112,11 +112,11 @@ variable "instance_type" {
 }
 
  variable "secret_name" {
-   default = "timing/rds-password-value9"
+   default = "timing/rds-password-value10"
  }
 
 variable "rds_secret_arn" {
-  default = "arn:aws:secretsmanager:ap-south-1:358308582535:secret:timing/rds-password-value9-1hJ4iJ"
+  default = "arn:aws:secretsmanager:ap-south-1:358308582535:secret:timing/rds-password-value10-M6VZYt"
 }
 
 variable "ecs_cluster_name" {
