@@ -50,7 +50,13 @@ output "web_alb_arn" {
 
 
 
-#output "app_alb_record_name" {
-#  value = local.app_alb_record_name
-#}
+output "app_alb_record_name" {
+  value = local.app_alb_record_name
+}
+
+
+output "web_alb_record_name" {
+  value = local.web_alb_record_name
+}
+
 

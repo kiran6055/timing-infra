@@ -29,6 +29,14 @@ resource "aws_ssm_parameter" "app_alb_security_group_id" {
 }
 
 
+resource "aws_ssm_parameter" "web_alb_security_group_id" {
+  name  = "/timing/vpc/web_alb_security_group_id"
+  type  = "String"
+  value = local.web_alb_security_group_id
+
+}
+
+
 
 resource "aws_ssm_parameter" "rds_security_group_id" {
   name  = "/timing/vpc/rds_security_group_id"
@@ -64,12 +72,32 @@ resource "aws_ssm_parameter" "target_group_arn" {
 }
 
 
+
+
+resource "aws_ssm_parameter" "web_target_group_arn" {
+  name  = "/timing/vpc/web_target_group_arn"
+  type  = "StringList"
+  value = local.web_target_group_arn
+
+}
+
+
+
 resource "aws_ssm_parameter" "app_alb_arn" {
   name  = "/timing/vpc/app_alb_arn"
   type  = "StringList"
   value = local.app_alb_arn
 
 }
+
+
+resource "aws_ssm_parameter" "web_alb_arn" {
+  name  = "/timing/vpc/web_alb_arn"
+  type  = "StringList"
+  value = local.web_alb_arn
+
+}
+
 
 
 
@@ -96,17 +124,17 @@ resource "aws_ssm_parameter" "app_alb_zone_id" {
 
 }
 
-#resource "aws_ssm_parameter" "web_alb_dns_name" {
-#  name  = "/timing/vpc/web_alb_dns_name"
-#  type  = "String"
-#  value = module.web_alb.web_alb_dns_name
-#}
+resource "aws_ssm_parameter" "web_alb_dns_name" {
+  name  = "/timing/vpc/web_alb_dns_name"
+  type  = "String"
+  value = module.web_alb.web_alb_dns_name
+}
 
 
-#resource "aws_ssm_parameter" "web_alb_zone_id" {
-#  name  = "/timing/vpc/web_alb_zone_id"
-#  type  = "String"
-#  value = module.web_alb.web_alb_zone_id
+resource "aws_ssm_parameter" "web_alb_zone_id" {
+  name  = "/timing/vpc/web_alb_zone_id"
+  type  = "String"
+  value = module.web_alb.web_alb_zone_id
 
-#}
+}
 
