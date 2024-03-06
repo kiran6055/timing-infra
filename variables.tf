@@ -222,6 +222,19 @@ variable "web_record_name" {
 
 
 
+
+variable "cdn_alb_record_name" {
+  default = "cdn"
+}
+
+
+
+variable "cdn_record_name" {
+  default = "cdn.awsctr.online"
+}
+
+
+
 variable "hosted_zone_id" {
   default = "Z10126533LAUSSXMXTTT9"
 }

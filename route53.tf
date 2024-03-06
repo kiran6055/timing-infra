@@ -14,6 +14,12 @@ module "route53" {
   web_record_name       = var.web_record_name
 
 
+
+  cdn_record_name       = var.cdn_record_name
+  cdn_alb_dns_name   = module.cdn.cloudfront_distribution_domain_name
+  cdn_alb_zone_id       = module.cdn.cloudfront_distribution_hosted_zone_id
+
 }
+
 
 

@@ -10,7 +10,7 @@ module "alb" {
   target_group_arn      = local.target_group_arn
 #  alb_arn               = local.alb_arn
   app_alb_tags          = var.app_alb_tags
-
+  certificate_arn       = module.acm.acm_certificate_arn
 }
 
 
@@ -27,7 +27,7 @@ module "web_alb" {
   target_group_arn      = local.web_target_group_arn
 #  alb_arn               = local.alb_arn
   app_alb_tags          = var.web_alb_tags
-
+  certificate_arn       = module.acm.acm_certificate_arn
 }
 
 
