@@ -6,6 +6,13 @@ pipeline {
         REGION = "ap-south-1"
     }
 
+
+    parameters {
+
+      choice(name: 'ACTION', choices: ['apply' , 'destroy'], description: 'Action')
+    }    
+
+
     stages {
         stage('Git Pull') {
             steps {
@@ -47,13 +54,11 @@ pipeline {
         stage('Terraform Apply') {
             steps {
                 script {
-                    input {
-                        message "Should we continue?"
-                        ok "Yes, we should."
-                    }
+                    
+                    
                      withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'aws-credentials']]) {
                        sh """
-                            terraform apply -auto-approve
+                            terraform ${ACTION} -auto-approve
                         """
                     }
                 }
