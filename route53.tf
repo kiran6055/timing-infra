@@ -1,5 +1,5 @@
 module "route53" {
-  source                = "../terraform-modules-route53"
+  source                = "github.com/kiran6055/terraform-modules-route53"
   record_name		= var.record_name
   hosted_zone_id    	= var.hosted_zone_id
   app_alb_record_name   = var.app_alb_record_name

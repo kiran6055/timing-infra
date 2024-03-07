@@ -1,5 +1,5 @@
 module "rds" {
-source = "../terraform-modules-rdstiming"
+source = "github.com/kiran6055/terraform-modules-rdstiming"
 allocated_storage       = var.allocated_storage
 db_name                 = var.db_name
 identifier              = var.identifier

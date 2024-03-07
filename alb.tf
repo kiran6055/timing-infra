@@ -1,5 +1,5 @@
 module "alb" {
-  source                = "../terraform-modules-applicationloadbalancer"
+  source                = "github.com/kiran6055/terraform-modules-applicationloadbalancer"
   app_alb_name          = var.app_alb_name
 #  load_balancer_arn     = local.load_balancer_arn
   vpc_id                = local.vpc_id
@@ -16,7 +16,7 @@ module "alb" {
 
 
 module "web_alb" {
-  source                = "../terraform-modules-applicationloadbalancer"
+  source                = "github.com/kiran6055/terraform-modules-applicationloadbalancer"
   app_alb_name          = var.web_alb_name
 #  load_balancer_arn     = local.web_load_balancer_arn
   vpc_id                = local.vpc_id
