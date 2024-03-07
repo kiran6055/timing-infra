@@ -21,7 +21,8 @@ pipeline {
         stage('Terraform Init') {
             steps {
                 script {
-                    withAWS(credentials: 'aws-credentials', region: "ap-south-1") {
+                     withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'aws-credentials']]) {
+
                         sh """
                             terraform init -reconfigure
                         """
@@ -33,7 +34,8 @@ pipeline {
         stage('Terraform Plan') {
             steps {
                 script {
-                    withAWS(credentials: 'aws-credentials', region: "ap-south-1") {
+                     withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'aws-credentials']]) {
+
                         sh """
                             terraform plan
                         """
@@ -49,8 +51,8 @@ pipeline {
                         message "Should we continue?"
                         ok "Yes, we should."
                     }
-                    withAWS(credentials: 'aws-auth', region: "ap-south-1") {
-                        sh """
+                     withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'aws-credentials']]) {
+                       sh """
                             terraform apply -auto-approve
                         """
                     }
